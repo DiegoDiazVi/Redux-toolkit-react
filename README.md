@@ -1,51 +1,28 @@
-# React + TypeScript + Vite
+# Redux Toolkit Learning Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+This React project, built with TypeScript, is designed to provide a comprehensive understanding of Redux Toolkit. The project covers key concepts such as:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Redux**: Understanding the core principles of Redux and how it manages state in large-scale applications.
+- **Store**: Setting up and configuring the Redux store to hold the application's state.
+- **Middlewares**: Implementing custom and built-in middlewares to extend Redux capabilities.
+- **Dispatch**: Dispatching actions to update the state within the Redux store.
+- **Actions**: Creating and handling actions that describe changes in the application state.
+- **State**: Managing and accessing the global state of the application.
+- **Asynchronous Actions**: Handling asynchronous logic using Redux Thunk or other middleware.
+- **RTK Query**: Simplifying data fetching and caching within the application using RTK Query.
+- **Redux Toolkit**: Leveraging the power of Redux Toolkit to streamline the setup and development process.
+- **Slices**: Creating and organizing slices of state for better modularity and scalability.
 
-## Expanding the ESLint configuration
+This section is concise but provides a solid theoretical foundation on Redux before moving on to practical implementations. Since the Reducer, which is the core of Redux, has already been covered, learning Redux at this stage should be more straightforward and intuitive.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Resources
 
-- Configure the top-level `parserOptions` property like this:
+Here are some resources to help you dive deeper into the topics covered in this project:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# Redux-toolkit-react
+- [Redux Official Documentation](https://redux.js.org/)
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/)
+- [RTK Query Documentation](https://redux-toolkit.js.org/rtk-query/overview)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [React Official Documentation](https://reactjs.org/docs/getting-started.html)
