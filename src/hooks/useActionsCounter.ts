@@ -1,4 +1,4 @@
-import { increment } from '../store/slices/counterSlices';
+import { decrement, increment } from '../store/slices/counterSlices';
 import { ActionsCounter } from '../types';
 import { useAppDispatch } from './useStore';
 
@@ -9,7 +9,11 @@ function useActionsCounter(): ActionsCounter {
     dispatch(increment());
   };
 
-  return { incrementValue };
+  const decrementValue = () => {
+    dispatch(decrement());
+  };
+
+  return { incrementValue, decrementValue };
 }
 
 export default useActionsCounter;
