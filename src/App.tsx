@@ -6,7 +6,7 @@ import viteLogo from '/vite.svg';
 
 function App(): JSX.Element {
   const count = useAppSelector((state) => state.counter);
-  const { incrementValue } = useActionsCounter();
+  const { incrementValue, decrementValue } = useActionsCounter();
 
   return (
     <>
@@ -17,7 +17,13 @@ function App(): JSX.Element {
       </div>
       <h1>React Redux Toolkit</h1>
       <div className="card">
-        <button onClick={incrementValue}>count is {count.value}</button>
+        <p>{count.value}</p>
+        <button className="button" onClick={incrementValue}>
+          Increment
+        </button>
+        <button className="button" onClick={decrementValue}>
+          Decrement
+        </button>
       </div>
     </>
   );
