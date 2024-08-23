@@ -7,3 +7,9 @@ export interface ActionsCounter {
   incrementByValue: (value: number) => void;
   decrementValue: () => void;
 }
+
+export interface UseCounterReturn extends ActionsCounter {
+  inputNumberValue: number;
+  valueCounter: number;
+  handlerInputChange: React.ChangeEventHandler<HTMLInputElement>;
+}
