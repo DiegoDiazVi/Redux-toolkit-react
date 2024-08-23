@@ -6,6 +6,6 @@ import {
 import { AppDispatch, RootState } from '../store/store';
 
 const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-const useAppDispatch: () => AppDispatch = useDispatch;
+const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 
 export { useAppDispatch, useAppSelector };
