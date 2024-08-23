@@ -1,22 +1,18 @@
-import { useState } from 'react';
 import './App.css';
 import reactLogo from './assets/react.svg';
-import useActionsCounter from './hooks/useActionsCounter';
-import { useAppSelector } from './hooks/useStore';
+import { useCounter } from './hooks/useCounter';
 import viteLogo from '/vite.svg';
 
 function App(): JSX.Element {
-  const [inputNumberValue, setInputNumberValue] = useState<number>(0);
-  const count = useAppSelector((state) => state.counter);
-  const { incrementValue, decrementValue, incrementByValue } =
-    useActionsCounter();
+  const {
+    inputNumberValue,
+    valueCounter,
+    incrementValue,
+    incrementByValue,
+    decrementValue,
+    handlerInputChange,
+  } = useCounter();
 
-  const handlerInputChange: React.ChangeEventHandler<HTMLInputElement> = (
-    evt
-  ) => {
-    const inputValue: number = Number(evt.target.value);
-    setInputNumberValue(inputValue);
-  };
   return (
     <>
       <div>
@@ -31,7 +27,7 @@ function App(): JSX.Element {
           value={inputNumberValue}
           onChange={handlerInputChange}
         />
-        <p>{count.value}</p>
+        <p>{valueCounter}</p>
         <button className="button" onClick={incrementValue}>
           Increment
         </button>
