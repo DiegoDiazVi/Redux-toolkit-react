@@ -4,5 +4,6 @@ export interface CounterState {
 
 export interface ActionsCounter {
   incrementValue: () => void;
+  incrementByValue: (value: number) => void;
   decrementValue: () => void;
 }
