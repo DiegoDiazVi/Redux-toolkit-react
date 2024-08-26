@@ -1,6 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+interface PokemonState {
+  page: number;
+  pokemons: object;
+  isLoading: boolean;
+}
+
+const initialState: PokemonState = {
+  page: 0,
+  pokemons: {},
+  isLoading: false,
+};
 
 export const pokemonSlice = createSlice({
   name: 'pokemon',
