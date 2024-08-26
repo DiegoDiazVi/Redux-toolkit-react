@@ -1,8 +1,8 @@
 import { getPokemonsThunk } from '../store/slices/pokemonThunks';
-import { ActionsPokemon } from '../types';
+import type { ActionsPokemon } from '../types';
 import { useAppDispatch } from './useStore';
 
-export const useActionsPokemons = (): ActionsPokemon => {
+export function useActionsPokemons(): ActionsPokemon {
   const dispatch = useAppDispatch();
 
   const getPokemon = (): void => {
@@ -10,4 +10,4 @@ export const useActionsPokemons = (): ActionsPokemon => {
   };
 
   return { getPokemon };
-};
+}
