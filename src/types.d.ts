@@ -13,3 +13,7 @@ export interface UseCounterReturn extends ActionsCounter {
   valueCounter: number;
   handlerInputChange: React.ChangeEventHandler<HTMLInputElement>;
 }
+
+export interface ActionsPokemon {
+  getPokemon: () => void;
+}
