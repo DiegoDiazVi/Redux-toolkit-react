@@ -7,7 +7,7 @@ export const getPokemonsThunk = (page: number = 0) => {
     dispatch(startLoadingPokemons());
     try {
       const response = await fetch(
-        'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
+        `https://pokeapi.co/api/v2/pokemon?limit=10&offset=${page * 10}`
       );
       const data: Pokemons = await response.json();
       const { results } = data;
