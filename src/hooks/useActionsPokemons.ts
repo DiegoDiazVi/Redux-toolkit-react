@@ -5,8 +5,8 @@ import { useAppDispatch } from './useStore';
 export function useActionsPokemons(): ActionsPokemon {
   const dispatch = useAppDispatch();
 
-  const getPokemon = (): void => {
-    dispatch(getPokemonsThunk());
+  const getPokemon = (page?: number): void => {
+    dispatch(getPokemonsThunk(page));
   };
 
   return { getPokemon };
