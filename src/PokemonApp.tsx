@@ -5,8 +5,9 @@ import { useAppSelector } from './hooks/useStore';
 
 export const PokemonApp = (): JSX.Element => {
   const { getPokemon } = useActionsPokemons();
-  const pokemonsState = useAppSelector((state) => state.pokemon);
-  const { page, isLoading, pokemons } = pokemonsState;
+  const { page, isLoading, pokemons } = useAppSelector(
+    (state) => state.pokemon
+  );
 
   const handleClick = () => {
     getPokemon(page);
