@@ -17,7 +17,7 @@ export interface UseCounterReturn extends ActionsCounter {
 
 // Pokemon related types
 export interface ActionsPokemon {
-  getPokemon: () => void;
+  getPokemon: (page?: number) => void;
 }
 
 export interface PokemonsResult {
