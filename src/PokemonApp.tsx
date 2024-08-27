@@ -8,29 +8,31 @@ export const PokemonApp = (): JSX.Element => {
   const pokemonsState = useAppSelector((state) => state.pokemon);
   const { page, isLoading, pokemons } = pokemonsState;
 
-  const loading = isLoading === true;
-
   const handleClick = () => {
     getPokemon(page);
   };
 
   useEffect(() => {
     getPokemon();
-  }, [getPokemon]);
+  }, []);
 
   return (
     <>
       <h2>Pokemon App</h2>
       <hr />
 
-      <p>Cargando: {loading}</p>
-      <ul>
-        <li>hola</li>
-        <li>hola</li>
-        <li>hola</li>
+      <p>Cargando: {String(isLoading)}</p>
+      <ul style={{ padding: '0' }}>
+        {pokemons.map((pokemon) => {
+          return (
+            <li style={{ listStyle: 'none' }} key={pokemon.name}>
+              <p>{pokemon.name}</p>
+            </li>
+          );
+        })}
       </ul>
 
-      <button disabled={loading} onClick={handleClick}>
+      <button disabled={isLoading} onClick={handleClick}>
         Next page
       </button>
     </>
