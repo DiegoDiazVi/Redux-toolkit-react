@@ -1,5 +1,5 @@
 import type { Dispatch, GetState } from '@reduxjs/toolkit';
-import { Pokemons } from '../../types';
+import type { PokemonsActionPayload, PokemonsResponse } from '../../types';
 import { setPokemons, startLoadingPokemons } from './pokemonSlice';
 
 export const getPokemonsThunk = (page: number = 0) => {
@@ -9,9 +9,13 @@ export const getPokemonsThunk = (page: number = 0) => {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon?limit=10&offset=${page * 10}`
       );
-      const data: Pokemons = await response.json();
+      const data: PokemonsResponse = await response.json();
       const { results } = data;
-      dispatch(setPokemons(results));
+      const payload: PokemonsActionPayload = {
+        page,
+        pokemons: results,
+      };
+      dispatch(setPokemons(payload));
     } catch (error) {
       throw new Error(error as string);
     }
