@@ -12,7 +12,7 @@ export const getPokemonsThunk = (page: number = 0) => {
       const data: PokemonsResponse = await response.json();
       const { results } = data;
       const payload: PokemonsActionPayload = {
-        page,
+        page: page + 1,
         pokemons: results,
       };
       dispatch(setPokemons(payload));
