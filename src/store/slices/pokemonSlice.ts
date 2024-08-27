@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type { PokemonsResult, PokemonState } from '../../types';
+import type { PokemonsActionPayload, PokemonState } from '../../types';
 
 const initialState: PokemonState = {
   page: 0,
@@ -14,9 +14,10 @@ export const pokemonSlice = createSlice({
     startLoadingPokemons: (state) => {
       state.isLoading = true;
     },
-    setPokemons: (state, action: PayloadAction<PokemonsResult[]>) => {
+    setPokemons: (state, action: PayloadAction<PokemonsActionPayload>) => {
       state.isLoading = false;
-      state.pokemons = action.payload;
+      state.pokemons = action.payload.pokemons;
+      state.page = action.payload.page;
     },
   },
 });
